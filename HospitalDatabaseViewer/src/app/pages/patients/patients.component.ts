@@ -4,7 +4,7 @@ import { ApiPatientsService, IPatient } from '../../services/api-patients.servic
 @Component({
   selector: 'app-patients',
   templateUrl: './patients.component.html',
-  styleUrl: './patients.component.css'
+  styleUrls: ['./patients.component.css']
 })
 export class PatientsComponent implements OnInit{
   
@@ -22,4 +22,9 @@ export class PatientsComponent implements OnInit{
     })
   }
 
+  deletePatient(patientId: number) {
+    this._apiService.deletePatient(patientId).subscribe(() => {
+      this.loadPatients();
+    })
+  }
 }

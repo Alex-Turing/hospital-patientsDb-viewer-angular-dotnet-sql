@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PatientDetailsComponent } from './pages/patient-details/patient-details.component';
 import { RouterLink } from '@angular/router';
 import { PatientCardComponent } from './components/patient-card/patient-card.component';
+import { PatientsTableComponent } from './components/patients-table/patients-table.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,16 @@ import { PatientCardComponent } from './components/patient-card/patient-card.com
     PatientsComponent,
     NewPatientComponent,
     PatientDetailsComponent,
-    PatientCardComponent
+    PatientCardComponent,
+    PatientsTableComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterLink
+    RouterLink,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
