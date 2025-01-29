@@ -1,0 +1,33 @@
+<div class="container">
+    <h1>List of Patients</h1>
+    <ng-container *ngIf="patients.length > 0; else noPatients">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Patient Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Birth Date</th>
+                    <th scope="col">View Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of patients">
+                    <th scope="row">{{p.patientId}}</th>
+                    <td>{{p.firstName}} {{p.lastName}}</td>
+                    <td>{{p.gender}}</td>
+                    <td>{{p.birthDate | date: 'dd/MM/yyyy'}}</td>
+                    <td>
+                        <button type="button" class="btn btn-outline-primary" [routerLink]="['/patients', p.patientId]">View Detail</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </ng-container>
+
+    <ng-template #noPatients>
+        <h3>Fetching patients information...</h3>
+    </ng-template>
+</div>
+
+

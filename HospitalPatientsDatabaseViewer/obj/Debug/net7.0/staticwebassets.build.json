@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ccXgGwFXKtb53xDwy9RAwp4Q4pAQUZJOftCyoeBVB+M=",
+  "Source": "HospitalPatientsDatabaseViewer",
+  "BasePath": "_content/HospitalPatientsDatabaseViewer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

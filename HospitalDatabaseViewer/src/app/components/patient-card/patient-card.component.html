@@ -1,0 +1,22 @@
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{patient?.firstName}} {{patient?.lastName}}</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">{{patient?.healthCardNum}}</h6>
+
+        <ng-container *ngIf="patient?.gender == 'F'; else malePatient">
+            <p class="card-text">Gender: Female</p>
+        </ng-container>
+
+        <!--p class="card-text">Gender: {{patient?.gender === "F" ? "Female" : "Male"}}</p-->
+        <p class="card-text">Birth Date: {{patient?.birthDate | date: 'dd/MM/yyyy'}}</p>
+        <p class="card-text">City/Province: {{patient?.city}}, {{patient?.provinceId}} {{patient?.postalCode}}</p>
+        <p class="card-text">Address: {{patient?.streetAddress}}</p>
+        <p class="card-text">Email: {{patient?.email}}</p>
+        <p class="card-text">Allergies: {{patient?.allergies}}</p>
+        <a routerLink="/patients" class="btn btn-primary">Back</a>
+
+        <ng-template #malePatient>
+            <p class="card-text">Gender: Male</p>
+        </ng-template>
+    </div>
+</div>
