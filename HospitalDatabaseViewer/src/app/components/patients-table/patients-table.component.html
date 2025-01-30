@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Patient Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Birth Date</th>
+            <th scope="col">View Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of patients">
+            <th scope="row">{{p.patientId}}</th>
+            <td>{{p.firstName}} {{p.lastName}}</td>
+            <td>{{p.gender}}</td>
+            <td>{{p.birthDate | date: 'dd/MM/yyyy'}}</td>
+            <td>
+                <button type="button" class="btn btn-outline-primary" [routerLink]="['/patients', p.patientId]">View Detail</button>
+                <button type="button" class="btn btn-outline-danger" (click)="deletePatient(p.patientId)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
